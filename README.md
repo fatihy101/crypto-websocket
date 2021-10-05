@@ -1,29 +1,17 @@
-# websocket-app
+# Websocket App
+- This small application was made using the **binance trade API** with websocket. 
+- Currently it's only listing specific pairs for showcase.
+- To check it out [click here](https://fatihy-crypto-websocket.web.app/)
 
-## Project setup
-```
+
+**Project Scripts**
+---
+
+```bash
+# Project Setup
 npm install
-```
-
-### Compiles and hot-reloads for development
-```
+# Run
 npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your unit tests
-```
+# Test
 npm run test:unit
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
