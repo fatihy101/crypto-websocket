@@ -3,7 +3,7 @@
   <div v-if="loading"> loading... </div>
   <div class="card" v-else>
       <div class="card__header">
-          <img :src="require(`@/assets/coin_icons/${coinPair.first}.svg`)" alt="coin-symbol" width="20" />
+          <img :src="`https://cryptologos.cc/logos/${coinPair.name}-${coinPair.first}-logo.svg?v=014`" alt="coin-symbol" width="20" />
           <p class="card__header-title"> 
               <span class="card__header-title__first"> {{ coinPair.first.toUpperCase() }} </span> 
               <span class="title-slash">/</span> 
@@ -26,9 +26,9 @@
               </chartist>
           </div>
       </div>
-      <div class="card__footer">
+      <!-- <div class="card__footer">
           <button>AL-SAT</button>
-      </div>
+      </div> -->
   </div>
 </div>
 </template>
@@ -68,10 +68,10 @@ export default {
             return this.coinPair.first +  this.coinPair.second;
         },
         price: function () {
-            return parseFloat(this.binanceData.c).toFixed(2);
+            return parseFloat(this.binanceData.c).toFixed(this.coinPair.decimalFix ? this.coinPair.decimalFix : 2);
         },
         priceDifference: function () {
-            return parseFloat(this.binanceData.p).toFixed(2);
+            return parseFloat(this.binanceData.p).toFixed(this.coinPair.decimalFix ? this.coinPair.decimalFix : 2);
         },
     },
     created() {
@@ -129,7 +129,7 @@ export default {
   justify-content: space-between;
   align-items: start;
   transition: all 0.3s ease-in-out;
-
+  margin: 0.3em 0.8em; 
   &:hover {
     box-shadow:  0 0px 0px rgba(0,0,0,0.19), 0 3px 2px rgba(0,0,0,0.23);
   }

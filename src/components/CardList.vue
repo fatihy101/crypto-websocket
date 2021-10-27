@@ -2,6 +2,8 @@
     <div class="wrapper">
         <div class="card-container">
             <CoinCard v-for="pair in pairs" :key="pair.first" :coinPair="pair" />
+
+            
         </div>
     </div>
 </template>
@@ -14,11 +16,14 @@ export default {
     },
     data: () => ({
         pairs: [
-            { first: 'btc', second: 'usdt' },
-            { first: 'eth', second: 'usdt' },
-            { first: 'ada', second: 'usdt' },
-            { first: 'cake', second: 'usdt' },
-            { first: 'xrp', second: 'usdt' }
+            { name: 'bitcoin', first: 'btc', second: 'usdt' },
+            { name: 'shiba-inu', first: 'shib', second: 'usdt', decimalFix: 8 },
+            {name: 'ethereum', first: 'eth', second: 'usdt'},
+            {name: 'xrp', first: 'xrp', second: 'usdt'},
+            {name: 'litecoin', first: 'ltc', second: 'usdt'},
+            {name: 'bitcoin-cash', first: 'bch', second: 'usdt'},
+            {name: 'cardano', first: 'ada', second: 'usdt'},
+            {name: 'stellar', first: 'xlm', second: 'usdt'}
         ]
     })
 }
@@ -47,10 +52,12 @@ export default {
   }
 }
 .card-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-gap: 13px;
+    display: flex;
+    // grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    // grid-gap: 13px;
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 
 }
 
