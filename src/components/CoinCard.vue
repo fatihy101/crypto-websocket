@@ -1,7 +1,7 @@
 <template>
 <div>
   <div v-if="loading"> loading... </div>
-  <div class="card" v-else>
+  <div class="card shadowed" v-else>
       <div class="card__header">
           <img :src="`https://cryptologos.cc/logos/${coinPair.name}-${coinPair.first}-logo.svg?v=014`" alt="coin-symbol" width="20" />
           <p class="card__header-title"> 
@@ -122,7 +122,6 @@ export default {
   max-width: 13.4em;
   height: 100%;
   border-radius: 12px;
-  box-shadow:  0 5px 4px #BAEAFF, 0 6px 6px rgba(0,0,0,0.20);
   background-color: #fff;
   display: flex;
   flex-direction: column;
@@ -130,9 +129,6 @@ export default {
   align-items: start;
   transition: all 0.3s ease-in-out;
   margin: 0.3em 0.8em; 
-  &:hover {
-    box-shadow:  0 0px 0px rgba(0,0,0,0.19), 0 3px 2px rgba(0,0,0,0.23);
-  }
 
   &__header {
     width: 100%;

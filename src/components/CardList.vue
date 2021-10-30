@@ -2,8 +2,6 @@
     <div class="wrapper">
         <div class="card-container">
             <CoinCard v-for="pair in pairs" :key="pair.first" :coinPair="pair" />
-
-            
         </div>
     </div>
 </template>
